@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Необхідно для роботи сесій
+app.secret_key = 'your_secret_key'
 
-# Змінна для збереження результатів опитування
+
 survey_results = {"Маргарита": 0, "Пепероні": 0, "Гавайська": 0}
 
-# Дані меню піцерії
+
 menu = [
     {"name": "Маргарита", "description": "Томатний соус, сир, базилік", "price": 120},
     {"name": "Пепероні", "description": "Томатний соус, сир, пепероні", "price": 150},
@@ -37,7 +37,7 @@ def add_menu():
         description = request.form.get("description")
         price = request.form.get("price")
 
-        # Додаємо нову страву до меню
+
         if name and description and price:
             menu.append({"name": name, "description": description, "price": float(price)})
             return redirect(url_for("menu_page"))
