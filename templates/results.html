@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результати опитування</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Результати опитування: Улюблена піцца</h1>
+    <p>Маргарита: {{ results["Маргарита"] }}</p>
+    <p>Пепероні: {{ results["Пепероні"] }}</p>
+    <p>Гавайська: {{ results["Гавайська"] }}</p>
+    <a href="{{ url_for('index') }}">Повернутись до опитування</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Опитування</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Яка ваша улюблена піцца?</h1>
+    <form method="post">
+        <label>
+            <input type="radio" name="answer" value="Маргарита" required> Маргарита
+        </label>
+        <label>
+            <input type="radio" name="answer" value="Пепероні" required> Пепероні
+        </label>
+        <label>
+            <input type="radio" name="answer" value="Гавайська" required> Гавайська
+        </label>
+        <button type="submit">Відправити</button>
+    </form>
+
+    <p><a href="{{ url_for('menu_page') }}">Переглянути меню піцерії</a></p>
+</body>
+</html>

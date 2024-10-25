@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Замовлення</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Оформити замовлення</h1>
+    {% if selected_pizza %}
+        <p>Ви замовили: {{ selected_pizza }} (кількість: {{ quantity }})</p>
+        <p>Дякуємо за замовлення!</p>
+        <a href="{{ url_for('menu_page') }}">Повернутись до меню</a>
+    {% else %}
+        <form method="post">
+            <label for="pizza">Оберіть піцу:</label>
+            <select name="pizza" required>
+                {% for item in menu %}
+                    <option value="{{ item.name }}">{{ item.name }}</option>
+                {% endfor %}
+            </select>
+            <label for="quantity">Кількість:</label>
+            <input type="number" name="quantity" min="1" value="1" required>
+            <button type="submit">Замовити</button>
+        </form>
+    {% endif %}
+</body>
+</html>

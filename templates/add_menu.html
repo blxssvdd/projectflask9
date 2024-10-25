@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати нову страву</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Додати нову страву в меню</h1>
+    <form method="post">
+        <label for="name">Назва:</label>
+        <input type="text" name="name" required>
+        <label for="description">Опис:</label>
+        <input type="text" name="description" required>
+        <label for="price">Ціна (грн):</label>
+        <input type="number" name="price" step="0.01" required>
+        <button type="submit">Додати</button>
+    </form>
+    <a href="{{ url_for('menu_page') }}">Повернутись до меню</a>
+</body>
+</html>
